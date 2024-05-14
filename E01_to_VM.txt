@@ -1,0 +1,8 @@
+1. FTK as admin
+2. mount E01, PHYS only, writable
+3. run below
+c:\Program Files\Oracle\VirtualBox\vboxmanage internalcommands createrawvmdk -filename path/to/desired.vmdk -rawdisk \\.\physicaldriveN 
+// physicaldriveN as indicated by virtualbox
+4. In virtual box (as admin) attached vmdk to new VM as the storage item
+    repeat as needed for every drive on the physical machine 
+5. If not booting, look at setup for "System" - "Enable EFI" especially for win 10 onwards 
