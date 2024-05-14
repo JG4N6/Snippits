@@ -1,0 +1,9 @@
+moov atoms:
+
+ffmpeg -i ./input.mp4 -y -b:a 32k -vcodec libx265 -b:v 320k -bufsize 320k -tag:v hvc1 -color_primaries bt709 -color_trc bt709 -colorspace bt709 -c:a libfdk_aac -profile:a aac_he_v2 -movflags faststart+frag_keyframe+empty_moov+dash+global_sidx -chunk_duration 500000000 -max_muxing_queue_size 1024 ./output.mp4
+
+
+badly playing mp4:
+
+ffmpeg -i input.mkv -c:v libx264 -crf 24 -pix_fmt yuv420p -tune film -c:a aac -b:a 192k -ar 44100 -vol 300 -strict -2 -speed fastest output.mp4   
+//might need to remove -vol
